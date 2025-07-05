@@ -213,3 +213,27 @@ No, KMS did **not** appropriately align shipping cost with priority.
 - Express Air (best for high-priority orders) was underused.  
 - Delivery Truck (slower, cheaper) was overused even for urgent orders.  
 - This mismatch results in **wasted cost and delayed deliveries**.
+
+---
+
+## 📈 Summary of Findings
+
+- **Most Sold Category:** Office Supplies  
+- **Top Region by Sales:** West  
+- **Least Performing Region:** Nunavut or Territories  
+- **Most Profitable Segment:** Consumer  
+- **Most Costly Shipping Mode:** Express Air  
+- **Major Insight:** Misalignment between order priority and shipping method caused unnecessary costs.
+
+---
+
+## 🧠 Skills Demonstrated
+
+- SQL Server T-SQL Querying  
+- Flat File Data Import & Cleaning  
+- Data Type Conversion & Optimization  
+- Real-world BI Question Solving  
+- Shipping Strategy Evaluation  
+- Customer Value & Profitability Analysis  
+
+
