@@ -47,3 +47,25 @@ As the **Data Analyst**, I led the end-to-end process:
 
 ## 🔍 Business Questions & SQL Solutions
 
+### 1️⃣ Which product category had the highest number of entries?
+
+```sql
+SELECT Product_Category, SUM(Sales) as Total_Sales
+FROM KMS_Sql_Case_Study
+GROUP BY Product_Category
+ORDER BY Total_Sales DESC;
+```
+
+SELECT Region, SUM(Sales) as Top_sales
+FROM KMS_Sql_Case_Study
+GROUP BY Region
+ORDER BY Top_sales DESC
+OFFSET 0 ROWS FETCH NEXT 3 ROWS ONLY;
+
+
+--For Bottom 3 Regions. ANS => NUNAVUT, NORTHWEST TERRITORIES, YUKON
+SELECT REGION, SUM(Sales) as Bottom_sales
+FROM KMS_Sql_Case_Study
+GROUP BY Region
+ORDER BY Bottom_sales 
+OFFSET 0 ROWS FETCH NEXT 3 ROWS ONLY;
