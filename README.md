@@ -77,7 +77,7 @@ ORDER BY Bottom_sales
 OFFSET 0 ROWS FETCH NEXT 3 ROWS ONLY;
 ```
 
-#### 3️⃣ What were the total sales of appliances in Ontario? 
+### 3️⃣ What were the total sales of appliances in Ontario? 
 
 ```sql
 SELECT Region, SUM(Sales) as Ontario_total_sales
@@ -145,7 +145,7 @@ ORDER BY Highest_Small_business DESC
 OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
 ```
 
-# 8️⃣ Which Corporate Customer placed the most number of orders in 2009 – 2012? 
+### 8️⃣ Which Corporate Customer placed the most number of orders in 2009 – 2012? 
 
 ```sql
 SELECT Customer_Name, Customer_Segment, COUNT(Order_Quantity) as Highest_Orderby_corporate
@@ -207,3 +207,9 @@ GROUP BY
 ORDER BY 
     Order_Priority, Ship_Mode DESC;
 ```
+
+🧠 **Insight:**  
+No, KMS did **not** appropriately align shipping cost with priority.  
+- Express Air (best for high-priority orders) was underused.  
+- Delivery Truck (slower, cheaper) was overused even for urgent orders.  
+- This mismatch results in **wasted cost and delayed deliveries**.
