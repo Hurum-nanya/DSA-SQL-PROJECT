@@ -135,42 +135,50 @@ ORDER BY
     Customer_Name, Customer_Total_Spent DESC;
 ```
 
---7. Which small business customer had the highest sales? Ans => Dennis Kane 
+### 7️⃣ Which small business customer had the highest sales? 
+```sql
 SELECT Customer_Name, Customer_Segment, SUM(Sales) as Highest_Small_business
 FROM KMS_Sql_Case_Study
 WHERE Customer_Segment = 'Small Business'
 GROUP BY Customer_Name, Customer_Segment
 ORDER BY Highest_Small_business DESC
 OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+```
 
+# 8️⃣ Which Corporate Customer placed the most number of orders in 2009 – 2012? 
 
---8. Which Corporate Customer placed the most number of orders in 2009 – 2012? Ans => Adam Hart
+```sql
 SELECT Customer_Name, Customer_Segment, COUNT(Order_Quantity) as Highest_Orderby_corporate
 FROM KMS_Sql_Case_Study
 WHERE Customer_Segment = 'Corporate'
 GROUP BY Customer_Name, Customer_Segment
 ORDER BY Highest_Orderby_corporate DESC
 OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+```
 
---9. Which consumer customer was the most profitable one? Ans => Emily Phan
+### 9️⃣ Which consumer customer was the most profitable one? Ans => Emily Phan
+
+```sql
 SELECT Customer_Name, Customer_Segment, SUM(Profit) as Most_Profitable_custumer
 FROM KMS_Sql_Case_Study
 WHERE Customer_Segment = 'Consumer'
 GROUP BY Customer_Name, Customer_Segment
 ORDER BY Most_Profitable_custumer DESC
 OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+```
 
---10. Which customer returned items, and what segment do they belong to? 
+### 🔟 Which customer returned items, and what segment do they belong to? 
+
+```sql
 SELECT k.Customer_Name, k.Customer_Segment, o.Status
 From KMS_Sql_Case_Study k
 JOIN Order_Status o on k.Order_ID = o.Order_ID
 GROUP BY k.Customer_Name, k.Customer_Segment, o.Status;
+```
 
+### 1️⃣1️⃣ If the delivery truck is the most economical but the slowest shipping method and Express Air is the fastest but the most expensive one, do you think the company appropriately spent shipping costs based on the Order Priority? Explain your answer
 
-/*11.  If the delivery truck is the most economical but the slowest shipping method and 
-Express Air is the fastest but the most expensive one, do you think the company 
-appropriately spent shipping costs based on the Order Priority? Explain your answer*/
-
+```sql
 SELECT 
     Order_Priority,
     Ship_Mode,
@@ -183,8 +191,9 @@ GROUP BY
     Order_Priority, Ship_Mode
 ORDER BY 
     Order_Priority, Avg_Shipping_day DESC;
+```
 
-
+```sql
 SELECT 
     Order_Priority,
     Ship_Mode,
@@ -197,4 +206,4 @@ GROUP BY
     Order_Priority, Ship_Mode
 ORDER BY 
     Order_Priority, Ship_Mode DESC;
-
+```
